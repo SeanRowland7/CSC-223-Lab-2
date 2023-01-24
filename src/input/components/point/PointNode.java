@@ -54,7 +54,9 @@ public class PointNode
 	@Override
 	public boolean equals(Object obj)
 	{
-		// TODO
+		PointNode a = obj;
+		if (!a.getX().equals(_x) || !a.getY().equals(_y)) return false;
+		return true;
 	}
 
     @Override
