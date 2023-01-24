@@ -1,5 +1,4 @@
 
-
 /**
  * A 2D Point (x, y).
  */
@@ -53,10 +52,10 @@ public class PointNode
 	public boolean equals(Object obj)
 	{
 		if (obj == null) return false;
-)
+		if (!( obj instanceof PointNode)) return false;
 		
-		PointNode a = obj;
-		if (!a.getX().equals(_x) || !a.getY().equals(_y)) return false;
+		PointNode a = (PointNode) obj;
+		
 		return true;
 	}
 
