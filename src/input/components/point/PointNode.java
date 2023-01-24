@@ -55,6 +55,6 @@ public class PointNode
     @Override
     public String toString()
     {
-		// TODO
+		return _name + "(" + _x + ", " + _y + ")";
 	}
 }
