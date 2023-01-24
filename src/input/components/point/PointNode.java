@@ -1,4 +1,7 @@
 package input.components.point;
+
+import utilities.math.MathUtilities;
+
 /**
  * A 2D Point (x, y).
  */
@@ -25,7 +28,7 @@ public class PointNode
 	{
 		_x = x;
 		_y = y;
-		_name = (ANONYMOUS);
+		_name = ANONYMOUS;
 	}
 
 	/**
@@ -55,10 +58,7 @@ public class PointNode
 		
 		PointNode that = (PointNode) obj;
 		
-		if (!(that.getX() == (_x)));
-		
-		
-		return true;
+		return MathUtilities.doubleEquals(_x, that.getX()) && MathUtilities.doubleEquals(_y, that.getY());
 	}
 
     @Override
