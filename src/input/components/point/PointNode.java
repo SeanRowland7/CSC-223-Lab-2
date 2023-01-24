@@ -56,7 +56,8 @@ public class PointNode
 		
 		PointNode that = (PointNode) obj;
 		
-		if (!(that.getX() == (_x)));
+		if (!(that.getX() == (_x))) return false;
+		if (!(that.getY() == (_y))) return false;
 		
 		
 		return true;
