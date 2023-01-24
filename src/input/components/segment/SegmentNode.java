@@ -1,8 +1,4 @@
 package input.components.segment;
-import input.components.point.*;
-
-import input.components.point.PointNode;
-
 import input.components.point.PointNode;
 
 /**
@@ -25,9 +21,19 @@ public class SegmentNode
 	@Override
 	public boolean equals(Object obj)
 	{
-		// TODO
+		if(obj == null) return false;
+		
+		if(!(obj instanceof SegmentNode)) return false;
+		
+		SegmentNode that = (SegmentNode)obj;
+		
+		if(_point1.equals(that._point1) && _point2.equals(that._point2)) return true;
+		
+		if(_point1.equals(that._point2) && _point2.equals(that._point1)) return true;
+			
 		return false;
 	}
+
 	
 	@Override
 	public String toString()
