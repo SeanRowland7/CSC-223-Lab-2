@@ -1,4 +1,7 @@
 package input.components.segment;
+import input.components.point.*;
+
+import input.components.point.PointNode;
 
 import input.components.point.PointNode;
 
