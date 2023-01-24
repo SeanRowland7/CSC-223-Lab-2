@@ -26,7 +26,7 @@ public class PointNode
 	 */
 	public PointNode(double x, double y)
 	{
-		// TODO
+		double findPointX = _x;
 	}
 
 	/**
