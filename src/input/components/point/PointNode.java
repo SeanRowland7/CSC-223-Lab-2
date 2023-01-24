@@ -25,6 +25,7 @@ public class PointNode
 	{
 		_x = x;
 		_y = y;
+		_name = (ANONYMOUS);
 	}
 
 	/**
