@@ -1,4 +1,4 @@
-
+package input.components.point;
 /**
  * A 2D Point (x, y).
  */
@@ -23,10 +23,8 @@ public class PointNode
 	 */
 	public PointNode(double x, double y)
 	{
-		x = getX();
-		y = getY();
-		
-		
+		_x = x;
+		_y = y;
 	}
 
 	/**
@@ -37,9 +35,9 @@ public class PointNode
 	 */
 	public PointNode(String name, double x, double y)
 	{
-		x = getX();
-		y = getY();
-		name = getName();
+		_x = x;
+		_y = y;
+		_name = name;
 	}
 
 	@Override
