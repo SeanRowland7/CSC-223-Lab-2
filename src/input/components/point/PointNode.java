@@ -1,3 +1,5 @@
+package input.components.point;
+
 
 /**
  * A 2D Point (x, y).
