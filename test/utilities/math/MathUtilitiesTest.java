@@ -1,10 +1,10 @@
-package input.components.segment;
+package utilities.math;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class SegmentNodeDatabaseTest {
+class MathUtilitiesTest {
 
 	@Test
 	void test() {
