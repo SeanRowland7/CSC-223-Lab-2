@@ -54,7 +54,10 @@ public class PointNode
 		if (obj == null) return false;
 		if (!( obj instanceof PointNode)) return false;
 		
-		PointNode a = (PointNode) obj;
+		PointNode that = (PointNode) obj;
+		
+		if (!(that.getX() == (_x)));
+		
 		
 		return true;
 	}
