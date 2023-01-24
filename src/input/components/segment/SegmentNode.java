@@ -1,5 +1,7 @@
 package input.components.segment;
 
+import input.components.point.PointNode;
+
 /**
  * A utility class only for representing ONE segment
  */
@@ -21,6 +23,7 @@ public class SegmentNode
 	public boolean equals(Object obj)
 	{
 		// TODO
+		return false;
 	}
 	
 	@Override
