@@ -26,7 +26,10 @@ public class PointNode
 	 */
 	public PointNode(double x, double y)
 	{
-		double findPointX = _x;
+		x = getX();
+		y = getY();
+		
+		
 	}
 
 	/**
@@ -37,7 +40,9 @@ public class PointNode
 	 */
 	public PointNode(String name, double x, double y)
 	{
-		// TODO
+		x = getX();
+		y = getY();
+		name = getName();
 	}
 
 	@Override
