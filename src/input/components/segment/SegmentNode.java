@@ -24,4 +24,10 @@ public class SegmentNode
 	{
 		// TODO
 	}
+	
+	@Override
+	public String toString()
+	{
+		return _point1.toString() + " " + _point2.toString() + "\n";
+	}
 }
