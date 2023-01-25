@@ -1,68 +1,65 @@
 package input.components.point;
 
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-public class PointNodeDatabase {
+public class PointNodeDatabase 
+{
 	
 	protected Set <PointNode> _points;
 
-	public PointNodeDatabase()
+	public PointNodeDatabase(){ _points = new LinkedHashSet<PointNode>(); }
+	
+	public PointNodeDatabase(List<PointNode> list) { _points = new LinkedHashSet<PointNode>(list); }
+	
+	public void put(PointNode node)
 	{
-		// todo
+		_points.add(node);
 	}
 	
-	public PointNodeDatabase(List<PointNode> list)
+	public boolean contains(PointNode node)
 	{
-		// todo
+		return _points.contains(node);
 	}
 	
-	public void put (PointNode node)
+	public boolean contains(double x, double y)
 	{
-		// todo
+		return _points.contains(new PointNode(x, y));
 	}
 	
-	public boolean contains (PointNode node)
+	public String getName(PointNode node)
 	{
-		// todo
+		return node.getName();
+	}
+	
+	public String getName(double x, double y)
+	{
+		for(PointNode point: _points)
+		{
+			if(point.equals(new PointNode(x, y))) return point.getName();
+		}
 		
-		return true;
+		return null;
 	}
-	public boolean contains (double x, double y)
+	
+	public PointNode getPoint(PointNode node)
 	{
-		// todo
+		for(PointNode point: _points)
+		{
+			if(point.equals(node)) return point;
+		}
 		
-		return true;
+		return null;
 	}
 	
-	public String getName (PointNode node)
+	public PointNode getPoint(double x, double y)
 	{
-		// todo
+		for(PointNode point: _points)
+		{
+			if(point.equals(new PointNode(x, y))) return point;
+		}
 		
-		return "";
+		return null;
 	}
-	
-	public String getName (double x, double y)
-	{
-		// todo
-		
-		return "";
-	}
-	
-	public PointNode getPoint (PointNode node)
-	{
-		// todo
-	}
-	
-	public PointNode getPoint (double x, double y)
-	{
-		// todo
-		
-		
-	}
-	
-	
-	
-	
-	
 }
