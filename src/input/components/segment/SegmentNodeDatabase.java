@@ -60,23 +60,22 @@ public class SegmentNodeDatabase
 	
 	public void addAdjacencyList(PointNode p, List<PointNode> list)
 	{
+		
 		if( list instanceof Set) _adjLists.put(p, (Set<PointNode>)list);
 	}
 	
 	public List<SegmentNode> asSegmentList()
 	{
-		// Try using entrySet()
 	
 		List<SegmentNode> listSegNodes = new ArrayList<SegmentNode>();
 		
-		for(Set<PointNode> adjValueList : _adjLists.values())
+		for (PointNode p : _adjLists.keySet())
 		{
-			for(PointNode p : adjValueList)
+			for (Set<PointNode> set : _adjLists.values())
 			{
-				//listSegNodes.add(new SegmentNode(, p)):
+				//listSegNodes.add(new SegmentNode(p, ))
 			}
 		}
-		
 		return listSegNodes;
 	}
 	
