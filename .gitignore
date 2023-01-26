@@ -3,4 +3,3 @@ bin/input/components/point/PointNode.class
 bin/input/components/segment/SegmentNode.class
 bin/input/components/point/PointNode.class
 *.class
-*.java
