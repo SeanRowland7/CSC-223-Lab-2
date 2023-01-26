@@ -39,6 +39,7 @@ public class SegmentNodeDatabase
 	
 	private void addDirectedEdge(PointNode p1, PointNode p2)
 	{
+		// If an adjacency list doesn't exist for a point, make one.
 		if(!_adjLists.containsKey(p1)) _adjLists.put(p1, new LinkedHashSet<PointNode>());
 			
 		// Create a copy of the adjacency list for p1.

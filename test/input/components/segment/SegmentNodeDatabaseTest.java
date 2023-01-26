@@ -43,11 +43,77 @@ class SegmentNodeDatabaseTest
     	return db;
     }
 
+    
+    public SegmentNodeDatabase build2()
+    {
+    	//      A___B___C                             
+    	//     / \ / \ / \                                                    
+    	//    D___E___F___G		
+    	//  
+    	PointNode a = new PointNode("A", 1, 1);
+    	PointNode b = new PointNode("B", 3, 1);
+    	PointNode c = new PointNode("C", 5, 1);
+
+    	PointNode d = new PointNode("D", 0, 0);
+    	PointNode e = new PointNode("E", 2, 0);
+    	PointNode f = new PointNode("F", 4, 0);
+    	PointNode g = new PointNode("G", 6, 0);
+
+    	SegmentNodeDatabase db = new SegmentNodeDatabase();
+    	  	
+    	db.addUndirectedEdge(a, b);
+    	db.addUndirectedEdge(b, c);
+    	db.addUndirectedEdge(a, d);
+    	db.addUndirectedEdge(a, e);
+    	db.addUndirectedEdge(b, e);
+    	db.addUndirectedEdge(b, f);
+    	db.addUndirectedEdge(c, f);
+    	db.addUndirectedEdge(c, g);
+    	db.addUndirectedEdge(d, e);
+    	db.addUndirectedEdge(e, f);
+    	db.addUndirectedEdge(f, g);
+    	
+    	return db;
+    }
 	@Test
 	void testNumUndirectedEdges()
 	{
 		SegmentNodeDatabase db = build();
 		
 		assertEquals(10, db.numUndirectedEdges());
+		
+		SegmentNodeDatabase db2 = build2();
+		
+		assertEquals(11, db2.numUndirectedEdges());
+	}
+	
+	@Test
+	void testAddUndirectedEdge()
+	{
+		SegmentNodeDatabase db = build();
+		
+		assertEquals(10, db.numUndirectedEdges());
+		
+		SegmentNodeDatabase db2 = build2();
+		
+		assertEquals(11, db2.numUndirectedEdges());
+	}
+	
+	@Test
+	void testAddAdjacencyList()
+	{
+		
+	}
+	
+	@Test
+	void testAsSegmentList()
+	{
+		
+	}
+	
+	@Test
+	void testAsUniqueSegmentList()
+	{
+		
 	}
 }
