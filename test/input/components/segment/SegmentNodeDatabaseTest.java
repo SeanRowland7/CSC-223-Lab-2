@@ -8,6 +8,7 @@ import input.components.point.PointNode;
 
 class SegmentNodeDatabaseTest
 {
+	
     public SegmentNodeDatabase build()
     {
     	//      A                                 

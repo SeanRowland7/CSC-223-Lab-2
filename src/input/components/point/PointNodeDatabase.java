@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class PointNodeDatabase 
 {
-	
+
 	protected Set <PointNode> _points;
 
 	public PointNodeDatabase(){ _points = new LinkedHashSet<PointNode>(); }

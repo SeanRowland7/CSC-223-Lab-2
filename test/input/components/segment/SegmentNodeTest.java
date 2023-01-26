@@ -8,6 +8,7 @@ import input.components.point.PointNode;
 
 class SegmentNodeTest 
 {
+	
 	@Test
 	void testSegmentNode() 
 	{

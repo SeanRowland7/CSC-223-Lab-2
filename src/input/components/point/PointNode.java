@@ -7,7 +7,7 @@ import utilities.math.MathUtilities;
  */
 public class PointNode
 {
-	// test
+
 	protected static final String ANONYMOUS = "__UNNAMED";
 
 	protected double _x;

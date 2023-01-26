@@ -6,6 +6,7 @@ import input.components.point.PointNode;
  */
 public class SegmentNode
 {
+	
 	protected PointNode _point1;
 	protected PointNode _point2;
 	

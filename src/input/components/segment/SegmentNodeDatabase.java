@@ -12,6 +12,7 @@ import java.util.Set;
 
 public class SegmentNodeDatabase
 {
+	
 	protected Map<PointNode, Set<PointNode>> _adjLists;
 	
 	public SegmentNodeDatabase()
@@ -68,7 +69,7 @@ public class SegmentNodeDatabase
 	
 		List<SegmentNode> listSegNodes = new ArrayList<SegmentNode>();
 		
-		for( Set<PointNode> adjValueList : _adjLists.values())
+		for(Set<PointNode> adjValueList : _adjLists.values())
 		{
 			for(PointNode p : adjValueList)
 			{
