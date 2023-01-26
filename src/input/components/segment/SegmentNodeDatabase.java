@@ -3,7 +3,6 @@ package input.components.segment;
 import input.components.point.*;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -12,12 +11,12 @@ import java.util.Set;
 
 public class SegmentNodeDatabase
 {
-	
 	protected Map<PointNode, Set<PointNode>> _adjLists;
 	
 	public SegmentNodeDatabase()
 	{
 		_adjLists = new LinkedHashMap<PointNode, Set<PointNode>>();
+		
 	}
 	
 	public SegmentNodeDatabase(Map<PointNode, Set<PointNode>> map)
@@ -28,8 +27,6 @@ public class SegmentNodeDatabase
 	
 	public int numUndirectedEdges()
 	{
-		//Collection<Set<PointNode>> adjValuesList = _adjLists.values();
-		
 		int count = 0;
 		
 		for( Set<PointNode> adjValueList : _adjLists.values())
@@ -37,11 +34,13 @@ public class SegmentNodeDatabase
 			count += adjValueList.size();
 		}
 		
-		return count;
+		return count / 2;
 	}
 	
 	private void addDirectedEdge(PointNode p1, PointNode p2)
 	{
+		if(!_adjLists.containsKey(p1)) _adjLists.put(p1, new LinkedHashSet<PointNode>());
+			
 		// Create a copy of the adjacency list for p1.
 		LinkedHashSet<PointNode> adjList = new LinkedHashSet<PointNode>(_adjLists.get(p1));
 		 
@@ -75,7 +74,6 @@ public class SegmentNodeDatabase
 			{
 				//listSegNodes.add(new SegmentNode(, p)):
 			}
-			
 		}
 		
 		return listSegNodes;
