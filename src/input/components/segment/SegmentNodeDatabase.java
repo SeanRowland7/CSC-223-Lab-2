@@ -62,6 +62,11 @@ public class SegmentNodeDatabase
 	{
 		LinkedHashSet<PointNode> set = new LinkedHashSet<PointNode>(list);
 
+		for(PointNode p2 : set)
+		{
+			addUndirectedEdge(p, p2);
+		}
+		
 		_adjLists.put(p, set);
 	}
 	
@@ -71,13 +76,10 @@ public class SegmentNodeDatabase
 		
 		for (PointNode p : _adjLists.keySet())
 		{
-			for (Set<PointNode> set : _adjLists.values())
+			for(PointNode p2 : _adjLists.get(p))
 			{
-				for(PointNode p2 : set)
-				{
-					listSegNodes.add(new SegmentNode(p, p2));
-				}
-			}		
+				listSegNodes.add(new SegmentNode(p, p2));
+			}
 		}
 		
 		return listSegNodes;
@@ -89,15 +91,11 @@ public class SegmentNodeDatabase
 		
 		for (PointNode p : _adjLists.keySet())
 		{
-			for (Set<PointNode> set : _adjLists.values())
+			for(PointNode p2 : _adjLists.get(p))
 			{
-				for(PointNode p2 : set)
-				{
-					SegmentNode segNode = new SegmentNode(p, p2);
-					
-					if(!listSegNodes.contains(segNode)) listSegNodes.add(segNode);
-				}
-			}		
+				SegmentNode segNode = new SegmentNode(p, p2);
+				if(!listSegNodes.contains(segNode)) listSegNodes.add(segNode);
+			}
 		}
 		
 		return listSegNodes;
