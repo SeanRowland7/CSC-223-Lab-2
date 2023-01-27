@@ -1,4 +1,4 @@
-package input.components.point;
+
 
 import utilities.math.MathUtilities;
 

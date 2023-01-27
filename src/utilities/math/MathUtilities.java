@@ -1,4 +1,3 @@
-package utilities.math;
 
 /**
  * Utilities focused on math-based functionality

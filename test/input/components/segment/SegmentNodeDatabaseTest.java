@@ -1,5 +1,5 @@
-package input.components.segment;
 
+package input.components.segment;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
 import input.components.point.PointNode;
+import input.components.segment.SegmentNode;
+import input.components.segment.SegmentNodeDatabase;
 
 class SegmentNodeDatabaseTest
 {
