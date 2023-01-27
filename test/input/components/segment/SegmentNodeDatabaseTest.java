@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
 import input.components.point.PointNode;
-import input.components.segment.SegmentNode;
-import input.components.segment.SegmentNodeDatabase;
 
 class SegmentNodeDatabaseTest
 {
