@@ -1,9 +1,15 @@
+package input.components.segment;
 
 import input.components.point.PointNode;
 
 /**
- * A utility class only for representing ONE segment
- */
+* The A SegmentNode provides a way to represent ONE segment
+*
+* <p>Bugs: None
+*
+* @author Sean Rowland, Khushi Patel, Julia Hogg
+* @date 01/27/2023
+*/
 public class SegmentNode
 {
 	
@@ -19,6 +25,9 @@ public class SegmentNode
 		_point2 = pt2;
 	}
 
+	/**
+	 *	Returns true if another SegmentNode is the essentially the same as this SegmentNode.
+	 */
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -35,7 +44,10 @@ public class SegmentNode
 		return false;
 	}
 
-	
+
+	/**
+	 *	Returns a String representing this SegmentNode.
+	 */
 	@Override
 	public String toString()
 	{

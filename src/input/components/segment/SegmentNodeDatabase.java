@@ -9,6 +9,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+* The A SegmentNodeDatabase provides a way to construct connected structures out of SegmentNodes.
+*
+* <p>Bugs: None
+*
+* @author Sean Rowland, Khushi Patel, Julia Hogg
+* @date 01/27/2023
+*/
 public class SegmentNodeDatabase
 {
 	protected Map<PointNode, Set<PointNode>> _adjLists;
@@ -24,7 +32,9 @@ public class SegmentNodeDatabase
 		_adjLists = new LinkedHashMap<PointNode, Set<PointNode>>(map);
 	}
 
-	
+	/**
+	 *	Returns the number of undirected edges in the structure.
+	 */
 	public int numUndirectedEdges()
 	{
 		int count = 0;
@@ -52,12 +62,18 @@ public class SegmentNodeDatabase
 		_adjLists.put(p1, adjList);
 	}
 		
+	/**
+	 *	Adds an undirected edge from point p1 to point p2  into the structure.
+	 */
 	public void addUndirectedEdge(PointNode p1, PointNode p2)
 	{
 		addDirectedEdge(p1, p2);
 		addDirectedEdge(p2, p1);
 	}
 	
+	/**
+	 *	Adds all undirected edges necessary to correctly construct the structure according to the adjacency list.
+	 */
 	public void addAdjacencyList(PointNode p, List<PointNode> list)
 	{
 		LinkedHashSet<PointNode> set = new LinkedHashSet<PointNode>(list);
@@ -70,6 +86,9 @@ public class SegmentNodeDatabase
 		_adjLists.put(p, set);
 	}
 	
+	/**
+	 *	Returns the structure represented as a list of its segments.
+	 */
 	public List<SegmentNode> asSegmentList()
 	{
 		List<SegmentNode> listSegNodes = new ArrayList<SegmentNode>();
@@ -85,6 +104,9 @@ public class SegmentNodeDatabase
 		return listSegNodes;
 	}
 	
+	/**
+	 *	Returns the structure represented as a unique list of its segments.
+	 */
 	public List<SegmentNode> asUniqueSegmentList()
 	{
 		List<SegmentNode> listSegNodes = new ArrayList<SegmentNode>();

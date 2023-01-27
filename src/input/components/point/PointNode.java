@@ -1,10 +1,16 @@
-
+package input.components.point;
 
 import utilities.math.MathUtilities;
 
 /**
- * A 2D Point (x, y).
- */
+* The PointNode class provides a 2D point that has a name, x coordinate, and y coordinate.
+*
+* <p>Bugs: None
+*
+* @author Sean Rowland, Khushi Patel, Julia Hogg
+* @date 01/27/2023
+*/
+
 public class PointNode
 {
 
@@ -44,12 +50,18 @@ public class PointNode
 		_name = name;
 	}
 
+	/**
+	 *	Returns an integer whose value represents the hash value of the coordinate.
+	 */
 	@Override
 	public int hashCode()
 	{
 		return Double.valueOf(_x).hashCode() + Double.valueOf(_y).hashCode();
 	}
 
+	/**
+	 *	Returns true if another PointNode is the essentially the same as this PointNode.
+	 */
 	@Override
 	public boolean equals(Object obj)
 	{
@@ -61,6 +73,9 @@ public class PointNode
 		return MathUtilities.doubleEquals(_x, that.getX()) && MathUtilities.doubleEquals(_y, that.getY());
 	}
 
+	/**
+	 *	Returns a String representing the PointNode.
+	 */
     @Override
     public String toString()
     {
