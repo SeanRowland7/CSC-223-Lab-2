@@ -1,4 +1,4 @@
-package input.components.segment;
+
 import input.components.point.PointNode;
 
 /**
