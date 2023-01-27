@@ -67,4 +67,3 @@ public class PointNode
 		return _name + "(" + _x + ", " + _y + ")";
 	}
 }
-

@@ -60,28 +60,46 @@ public class SegmentNodeDatabase
 	
 	public void addAdjacencyList(PointNode p, List<PointNode> list)
 	{
-		
-		if( list instanceof Set) _adjLists.put(p, (Set<PointNode>)list);
+		LinkedHashSet<PointNode> set = new LinkedHashSet<PointNode>(list);
+
+		_adjLists.put(p, set);
 	}
 	
 	public List<SegmentNode> asSegmentList()
 	{
-	
 		List<SegmentNode> listSegNodes = new ArrayList<SegmentNode>();
 		
 		for (PointNode p : _adjLists.keySet())
 		{
 			for (Set<PointNode> set : _adjLists.values())
 			{
-				//listSegNodes.add(new SegmentNode(p, ))
-			}
+				for(PointNode p2 : set)
+				{
+					listSegNodes.add(new SegmentNode(p, p2));
+				}
+			}		
 		}
+		
 		return listSegNodes;
 	}
 	
 	public List<SegmentNode> asUniqueSegmentList()
 	{
 		List<SegmentNode> listSegNodes = new ArrayList<SegmentNode>();
+		
+		for (PointNode p : _adjLists.keySet())
+		{
+			for (Set<PointNode> set : _adjLists.values())
+			{
+				for(PointNode p2 : set)
+				{
+					SegmentNode segNode = new SegmentNode(p, p2);
+					
+					if(!listSegNodes.contains(segNode)) listSegNodes.add(segNode);
+				}
+			}		
+		}
+		
 		return listSegNodes;
 	}
 	
