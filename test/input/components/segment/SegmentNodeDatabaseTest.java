@@ -1,5 +1,7 @@
 package input.components.segment;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
@@ -102,18 +104,28 @@ class SegmentNodeDatabaseTest
 	@Test
 	void testAddAdjacencyList()
 	{
-		
+		SegmentNodeDatabase db = build();
+		assertEquals(15, db.addAdjacencyList(null, null));
+		//assertThrows(NullPointerException.class);
+		SegmentNodeDatabase db2 = build2();
+		assertEquals(20, db2.addAdjacencyList(null, null));
 	}
 	
 	@Test
 	void testAsSegmentList()
 	{
-		
+		SegmentNodeDatabase db = build();
+		assertEquals(10, db.asSegmentList());
+		SegmentNodeDatabase db2 = build2();
+		assertEquals(10, db2.asSegmentList());
 	}
 	
 	@Test
 	void testAsUniqueSegmentList()
 	{
-		
+		SegmentNodeDatabase db = build();
+		assertEquals(10, db.asUniqueSegmentList());
+		SegmentNodeDatabase db2 = build2();
+		assertEquals(10, db2.asUniqueSegmentList());
 	}
 }
